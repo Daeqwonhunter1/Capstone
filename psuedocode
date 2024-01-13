@@ -1,0 +1,21 @@
+1. Create a class named UserController annotated with @RestController.
+
+2. Use @CrossOrigin to allow cross-origin requests from "http://localhost:3000".
+
+3. Define the UserController class:
+   - Annotate the class with @RestController to indicate it handles RESTful requests.
+   - Inject an instance of UserRepository using @Autowired.
+
+4. Define two endpoints using @PostMapping and @GetMapping annotations:
+   a. @PostMapping("/user"):
+      - Define a method named newUser.
+      - Accept a User object as a request body by annotating it with @RequestBody.
+      - Inside the method, save the new user using userRepository.save(newUser).
+      - Return the saved User object.
+
+   b. @GetMapping("/users"):
+      - Define a method named getAllUsers.
+      - Inside the method, retrieve all users using userRepository.findAll().
+      - Return a List<User> containing all users.
+
+5. The UserController class allows creating a new user via POST request ("/user") and retrieving all users via GET request ("/users").
